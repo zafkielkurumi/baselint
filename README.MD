@@ -13,22 +13,21 @@ package.json 添加 "fix": "eslint src/* --fix"
 
 ## 添加prettier
 npm i -g prettier 可选
- npm install --save-dev --save-exact prettier
- .prettierrc.json 让编辑器知道正在使用prettier
+npm install --save-dev --save-exact prettier
+.prettierrc.json 让编辑器知道正在使用prettier
 新建  .prettierignore 添加不需要检测的文件
 若同时使用eslint 添加eslint-config-prettier
 npm install --save-dev eslint-config-prettier
-并将 "prettier" 放在.eslintrc.* extends 
+并将 "prettier" 放在.eslintrc.* extends 末尾
+
 ts 添加 "prettier/@typescript-eslint"
 ## git hooks
 npx mrm lint-staged This will install husky and lint-staged
+或者
+npm install --save-dev pretty-quick husky
 ## lint-staged
 https://github.com/okonet/lint-staged#configuration
 
 
 # TODO
- 解决lint-staged报错问题
-  "lint-staged": {
-    "*.{js,ts,tsx}": "eslint  --fix src/*",
-    "*.{js,css,md,ts,tsx,scss}": "prettier --write ."
-  }
+ hooks 使用pretty-quick --staged在git desktop会出错，命令不会
